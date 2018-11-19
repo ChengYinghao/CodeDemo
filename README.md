@@ -1,5 +1,5 @@
 # CodeDemo
-该项目为个人机器学习项目，目标为识别中国的四位验证码（数字加字母），其中尝试了两种识别验证码的方法：多层感知机识别和卷积神经网络识别。
+该项目为个人机器学习项目，目标为识别中国的四位验证码（数字加字母），其中尝试了两种识别验证码的方法：多层感知机识别和卷积神经网络识别，目前项目尚未完结。
 
 数据集产生方法：
 两种方法都用scikit-image库生成验证码数据，scikit-image库能够接收PIL库导出的numpy数组格式的图像数据进行错切变化。
@@ -16,7 +16,12 @@ MLP方法可运行MLP_method目录下的MLP.py用已经训练好的模型对随�
 
 cnn方法可运行CNN_method目录下的Network_onlyNumbers.py用训练好的模型对随机验证码图像进行预测并输出结果。
 
-This project is a personal machine learning project, aiming at identifying China's four-digit verification code (numeral plus letter), in which two methods of identifying verification code are tried: multi-layer perceptron recognition and convolution neural network recognition.
+结果：
+MLP方法下对分割后的单个字母预测准确率超过95%，但是对整体全部预测正确的准确率还不是很高。
+
+cnn方法下对4位验证码整体预测准确率超过99%，接下来准备训练神经网络预测同时包含数字和字母的验证码。
+
+This project is a personal machine learning project, aiming at identifying China's four-digit verification code (numeral plus letter), in which two methods of identifying verification code are tried: multi-layer perceptron recognition and convolution neural network recognition,The project is not yet complete.
 
 Data set generation method:Both methods generate captcha data with the scikit-image library, which can receive image data in the numpy array format exported by the PIL library for miscutting changes.
 
@@ -29,3 +34,8 @@ Code run:
 The MLP method can run the mlp.py under the MLP_method directory to predict the random verification code image with the trained model and output the results.
 
 CNN method can run network_onlynumber.py in CNN_method directory to predict the random verification code image and output the result with the trained model.
+
+Result:
+Under the MLP method, the accuracy of the single letter after segmentation is over 95%, but the accuracy of the overall prediction is not very high.
+
+Under the cnn method, the overall prediction accuracy of the 4-digit verification code is over 99%, and then it is ready to train the neural network to predict the verification code containing both numbers and letters.
