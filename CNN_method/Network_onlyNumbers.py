@@ -3,7 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 from core.CNN_method.Data_onlyNumbers import gen_captcha_text_image, number, get_next_batch, convert2gray
 
-
+'''
+define network structure
+'''
 def cnn_structure(w_alpha=0.01, b_alpha=0.1, debug=False):
     x = tf.reshape(X, shape=[-1, image_height, image_width, 1])
 
@@ -84,7 +86,10 @@ def train_cnn(debug=False):
                     break
             step += 1
 
-
+'''
+input: captcha_image
+output: predicted text
+'''
 def crack_captcha(captcha_image):
     output = cnn_structure()
 
@@ -100,6 +105,8 @@ def crack_captcha(captcha_image):
 
 if __name__ == '__main__':
     train = 1
+    
+    # train network
     if train == 0:
         text, image = gen_captcha_text_image()
         print("验证码大小：", image.shape)  # (60,160,3)
@@ -115,7 +122,8 @@ if __name__ == '__main__':
         Y = tf.placeholder(tf.float32, [None, max_captcha * char_set_len])
         keep_prob = tf.placeholder(tf.float32)
         train_cnn()
-
+        
+    # predict
     if train == 1:
         image_height = 60
         image_width = 160
