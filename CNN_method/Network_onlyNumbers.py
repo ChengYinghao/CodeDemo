@@ -129,8 +129,6 @@ if __name__ == '__main__':
         image_width = 160
         char_set = number
         char_set_len = len(char_set)
-        X = tf.placeholder(tf.float32, [None, image_height * image_width])
-        keep_prob = tf.placeholder(tf.float32)
         correct_text, image = gen_captcha_text_image(number, 4)
         # image = plt.imread('0062.png', 'r')
         image = np.array(image)
