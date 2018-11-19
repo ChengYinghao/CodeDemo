@@ -1,7 +1,7 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
-from core.CNN_method.Data_onlyNumbers import gen_captcha_text_image, number, get_next_batch, convert2gray
+from CNN_method.Data_onlyNumbers import gen_captcha_text_image, number, get_next_batch, convert2gray
 
 
 def cnn_structure(w_alpha=0.01, b_alpha=0.1, debug=False):
